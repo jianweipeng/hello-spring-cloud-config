@@ -1,1 +1,38 @@
 
+Spring:
+  application:
+    name: hello-spring-cloud-config
+
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:respo/ # 搜索src/main/resource 下的properties文件夹下的文件
+
+
+
+
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/jianwei/spring-cloud-config
+          search-paths: smartbusinessRespo
+          username: jianweipeng1104@163.com
+          password: pjw2009474
+
+
+
+server:
+  port: 8888
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
+
